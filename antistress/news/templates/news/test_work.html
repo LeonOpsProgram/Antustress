@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+    <div class="features">
+
+        {% if tests %}
+        <form  method="post">
+
+            {% for el in tests %}
+                <div class="alert alert alert-info">
+                    <h3>{{el.title}}</h3>
+                    <p>{{el.anons}}</p><br>
+                    <ul>
+                        <li><input type="checkbox">{{el.ans1}}</li>
+                        <li><input type="checkbox">{{el.ans2}}</li>
+                        <li><input type="checkbox">{{el.ans2}}</li>
+                    </ul>
+                </div>
+            {% endfor %}
+            <button class="btn btn-success" type="submit">Отправить ответ</button>
+        </form>
+        {% else %}
+         <p> У вас нет записей</p>
+        {% endif %}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Удаление статьи{% endblock %}
+
+{% block content %}
+    <dib class="features">
+       <h1> Форма по добавлению статьи</h1>
+
+        <form  method="post">
+            {% csrf_token %}
+            <button class="btn btn-success" type="submit">Удалить статью</button>
+        </form>
+    </dib>
+{% endblock %}
